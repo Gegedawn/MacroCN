@@ -460,7 +460,9 @@ With Documents(templatedoc)
     .Bookmarks("DurationOfOps").Range.Text = DurationOfOps
     .Bookmarks("LegalForm").Range.Text = legalstatus
     .Bookmarks("dollarsign").Range.Text = Trim(dollarsign)
-    .Bookmarks("RegisterAmount").Range.Text = RegisterAmount
+    if RegisterAmount <> "" then
+        .Bookmarks("RegisterAmount").Range.Text = RegisterAmount
+    end if
     .Bookmarks("LegalRep").Range.Text = LegalRep & " " & CNLegalRep
     .Bookmarks("BussScope").Range.Text = BusinessScope
     
