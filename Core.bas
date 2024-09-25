@@ -304,9 +304,11 @@ With Documents(doc1)
                     dollarsign = ""
                 End If
         End If
-        
-    RegisterAmount = Left(RegisterCapital, Len(RegisterCapital) - 6)
-        
+
+    If RegisterCapital <> "" then
+        RegisterAmount = Left(RegisterCapital, Len(RegisterCapital) - 6)
+    End if
+
         SearchText "Business Scope:", False, False
         If Selection.Find.Found Then
             BusinessScope = RemoveExtSpacing(Selection.Cells(1).Next.Range.Text)
