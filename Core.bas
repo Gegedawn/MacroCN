@@ -475,10 +475,12 @@ With Documents(templatedoc)
        .Bookmarks("ChangeInRegister").Range.FormattedText = ChangeInRegister.Range.FormattedText
        .Bookmarks("ChangeInRegisterDEL").Range.Delete
     End If
-    
-    .Bookmarks("ShareHolders1").Range.FormattedText = ShareHolders1.Range.FormattedText
-    .Bookmarks("ShareHolders2").Range.FormattedText = ShareHolders2.Range.FormattedText
-       
+
+    If IsEmpty(ShareHolders1) = false then
+        .Bookmarks("ShareHolders1").Range.FormattedText = ShareHolders1.Range.FormattedText
+        .Bookmarks("ShareHolders2").Range.FormattedText = ShareHolders2.Range.FormattedText
+    end if
+
     Set layerRange = .Bookmarks("layerImage").Range
     layerRange.Paste
     
